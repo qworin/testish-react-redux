@@ -5,7 +5,8 @@ import { bindActionCreators } from 'redux';
 import STATUS from '../../constants';
 import * as jobsActions from '../../actions/jobs-actions';
 import JobSearchForm from '../job-search-form/job-search-form';
-import PreData from '../common/pre-data';
+import JobItem from '../job-item/job-item';
+import List from '../common/list';
 import style from './jobs-section.scss';
 
 class JobsSection extends React.Component {
@@ -53,7 +54,7 @@ class JobsSection extends React.Component {
   renderJobs = () => {
     const { jobs, status } = this.props;
     if (jobs.length) {
-      return <PreData data={jobs} />; // TODO: render a list
+      return <List items={jobs} itemElement={JobItem} />;
     }
     if (!jobs.length && status === STATUS.COMPLETED) {
       return <p className={style['no-results']}>No jobs found</p>;
