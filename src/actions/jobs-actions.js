@@ -1,6 +1,6 @@
 import * as types from './action-types';
 import initialState from '../reducers/initial-state';
-import STATUS from '../constants';
+import { STATUS, JOBS_API_PAGE_LIMIT } from '../constants';
 
 const url = () => {
   const corsPrefix = 'https://cors-anywhere.herokuapp.com/'; // kinda dev hack
@@ -28,12 +28,14 @@ export function pendingJobs(status, jobs) {
 }
 
 export function receiveJobs(json) {
-  return pendingJobs(STATUS.COMPLETED, json);
+  const status =
+    json.length < JOBS_API_PAGE_LIMIT ? STATUS.DEPLETED : STATUS.COMPLETED;
+  return pendingJobs(status, json);
 }
 
-export function fetchJobs(searchParameters) {
+export function fetchJobs(searchParameters, currentJobs = initialState.jobs) {
   return dispatch => {
-    dispatch(pendingJobs(STATUS.PENDING, initialState.jobs));
+    dispatch(pendingJobs(STATUS.PENDING, currentJobs));
     return fetch(url() + parametrize(searchParameters))
       .then(response => response.json())
       .then(json => dispatch(receiveJobs(json)));

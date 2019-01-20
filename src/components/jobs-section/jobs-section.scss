@@ -1,6 +1,24 @@
 .jobs {
+  padding-bottom: 2rem;
   .query-header {
   }
-  .no-results {
+  .results {
+  }
+}
+.spinner {
+  $size: 3rem;
+  width: $size;
+  height: $size;
+  margin: $size auto calc(2 * #{$size});
+  background-color: #333;
+  animation: scaleout 1.0s infinite ease-in-out;
+}
+@keyframes scaleout {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
   }
 }

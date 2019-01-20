@@ -4,10 +4,13 @@ import {
   RECEIVE_JOBS,
   PENDING_JOBS,
 } from '../actions/action-types';
+import { STATUS } from '../constants';
 
 export default function jobsReducer(state = initialState, action) {
   const { jobs, status } = action;
+  const currentJobs = state.jobs;
   let newState;
+  let allJobs;
   switch (action.type) {
     case FETCH_JOBS:
       console.log('FETCH_JOBS Action', action);
@@ -17,7 +20,8 @@ export default function jobsReducer(state = initialState, action) {
       return action;
     case PENDING_JOBS:
       console.log('PENDING_JOBS Action', action);
-      newState = { jobs, status };
+      allJobs = status !== STATUS.PENDING ? [...currentJobs, ...jobs] : jobs;
+      newState = { status, jobs: allJobs };
       return newState;
     default:
       return state;

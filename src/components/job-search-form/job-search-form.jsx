@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import STATUS from '../../constants';
+import { STATUS } from '../../constants';
 import Input from '../common/input';
 import SubmitButton from '../common/submit-button';
 import style from './job-search-form.scss';
