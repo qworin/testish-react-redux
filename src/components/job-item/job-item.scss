@@ -6,19 +6,6 @@
   .title {
     grid-column: span 2 / auto;
     justify-self: center;
-    .button-link {
-      font-size: 1.2em;
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
-      text-decoration: underline;
-      display: inline;
-      margin: 0;
-      padding: 0;
-      &:hover, &:focus {
-        text-decoration: none;
-      }
-    }
   }
   .pull-end {
     justify-self: end;
