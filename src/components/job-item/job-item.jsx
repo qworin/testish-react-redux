@@ -39,18 +39,22 @@ class JobItem extends React.Component {
     const { item } = this.props;
     // TODO: extract button-link to common component
     return (
-      <li className={style.item + ' ' + style.clearfix} onClick={this.handleToggleModal}>
-        <div className={style.clearfix}>
+      <li className={style.item} onClick={this.handleToggleModal}>
+        <div className={style.line}>
           <span className={style.primary + ' ' +style.title}>{item.title}</span>
           <span className={style.secondary}>{item.location}</span>
         </div>
-        <div className={style.clearfix}>
+        <div className={style.line}>
           <span className={style.primary}>
             <span>{item.company}</span>
             &nbsp;&bull;&nbsp;
             <span className={style.badge}>{item.type}</span>
           </span>
-          <span className={style.secondary + ' ' + style.badge}><TimeAgo datetime={item.created_at} /></span>
+          <span className={style.secondary}>
+            <span className={style.badge}>
+              <TimeAgo datetime={item.created_at} />
+            </span>
+          </span>
         </div>
         {showModal && (
           <Modal onClose={this.handleToggleModal}>

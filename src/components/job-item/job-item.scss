@@ -1,8 +1,6 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
-.clearfix:after {
-  @include clearfix();
-}
+@include clearfix('.item');
 .item {
   padding: 0.5em 1em;
   margin: 0.25em;
@@ -23,26 +21,27 @@
     color: $badge-color;
   }
 
-  $primary-space: 70%;
-  .clearfix {
+  .line {
     vertical-align: baseline;
+    line-height: calc(1.5 * #{$bigger});
     &:not(:first-child) {
       margin-top: 0.25em;
     }
-  }
-  .primary {
-    float: left;
-    width: $primary-space;
-    &.title {
-      font-size: $bigger;
-      color: $h-color;
+
+    $primary-space: 60%;
+    .primary {
+      float: left;
+      width: $primary-space;
+      &.title {
+        font-size: $bigger;
+        color: $h-color;
+      }
+    }
+    .secondary {
+      float: right;
+      text-align: right;
+      width: calc(100% - #{$primary-space});
     }
   }
 
-  .secondary {
-    float: right;
-    text-align: right;
-    word-break: break-all;
-    width: calc(100% - #{$primary-space});
-  }
 }

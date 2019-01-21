@@ -1,8 +1,33 @@
+@import '../../styles/variables.scss';
 .jobs {
-  padding-bottom: 2rem;
+  $space: 2rem;
+  padding-bottom: $space;
+  .main-title {
+    font-size: $space;
+    padding-left: 20%;
+    color: $dark;
+    &:first-letter {
+      color: $tint-pri;
+    }
+    &:after {
+      content: ' ◈◈◈◈';
+      border-left: $stylish-border;
+      font-size: $smaller;
+    }
+  }
+  .list-wrapper {
+    width: 70vw;
+    margin: $space auto;
+    @media (max-width: 720px) {
+      width: 100%;
+    }
+  }
   .query-header {
+    text-align: center;
   }
   .results {
+    text-align: center;
+    font-size: $smaller;
   }
 }
 .spinner {
@@ -10,7 +35,7 @@
   width: $size;
   height: $size;
   margin: $size auto calc(2 * #{$size});
-  background-color: #333;
+  background-color: $tint-pri;
   animation: scaleout 1.0s infinite ease-in-out;
 }
 @keyframes scaleout {

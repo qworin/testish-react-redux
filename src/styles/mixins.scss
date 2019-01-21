@@ -1,0 +1,7 @@
+@mixin clearfix($sel) {
+  #{$sel}:after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}

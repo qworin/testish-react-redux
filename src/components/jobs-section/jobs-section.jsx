@@ -93,6 +93,11 @@ class JobsSection extends React.Component {
     const { jobs } = this.props;
     if (jobs.length) {
       return <List items={jobs} itemElement={JobItem} />;
+      return (
+        <div className={style['list-wrapper']}>
+          <List items={this.jobs} itemElement={JobItem} />
+        </div>
+      );
     }
     return '';
   };
@@ -111,6 +116,7 @@ class JobsSection extends React.Component {
   render() {
     return (
       <div className={style.jobs}>
+        <h1 className={style['main-title']}>GitHub Jobs&nbsp;</h1>
         <JobSearchForm onHandleSubmit={this.handleSearch} />
         {this.renderQueryHeader()}
         {this.renderJobs()}
