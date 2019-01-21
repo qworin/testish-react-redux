@@ -12,7 +12,7 @@
   &:nth-of-type(odd) {
     background-color: rgba($tint-ter, 0.4);
   }
-  &:hover {
+  &:hover, &:active, &:focus {
     background-color: $tint-sec;
   }
 

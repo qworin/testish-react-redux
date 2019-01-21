@@ -14,7 +14,7 @@ const Input = ({ name, type, title, placeholder }) => (
         placeholder={placeholder}
         title={title || name}
       />
-      <span className={type === 'checkbox' ? style.mark : ''}></span>
+      <span className={type === 'checkbox' ? style.mark : ''} />
     </label>
   </div>
 );

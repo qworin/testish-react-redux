@@ -92,10 +92,9 @@ class JobsSection extends React.Component {
   renderJobs = () => {
     const { jobs } = this.props;
     if (jobs.length) {
-      return <List items={jobs} itemElement={JobItem} />;
       return (
         <div className={style['list-wrapper']}>
-          <List items={this.jobs} itemElement={JobItem} />
+          <List items={jobs} itemElement={JobItem} />
         </div>
       );
     }

@@ -26,7 +26,8 @@ class Modal extends React.Component {
 
   handleKeyUp(e) {
     const { onClose } = this.props;
-    if (e.keyCode === 27) {
+    const { KeyEvent } = window;
+    if (e.keyCode === KeyEvent.DOM_VK_ESCAPE) {
       e.preventDefault();
       onClose();
       window.removeEventListener('keyup', this.handleKeyUp, false);
