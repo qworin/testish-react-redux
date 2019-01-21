@@ -1,5 +1,7 @@
+@import '../../styles/variables.scss';
 .button-link {
-  font-size: 1.2em;
+  font-size: $bigger;
+  color: $shade;
   background-color: transparent;
   border: none;
   cursor: pointer;
