@@ -1,6 +1,8 @@
 @import '../../styles/variables.scss';
 .job-details {
   $header-margin: 0.25em;
+  $inner-space: 0.5em;
+  $outer-space: 1em;
   padding: 1rem;
   .badge {
     font-size: $smaller;
@@ -8,17 +10,20 @@
   }
   & > h1 {
     margin-top: $header-margin;
-    border-bottom: solid 4px $tint-pri;
+    border-bottom: $stylish-border;
+    background-color: $tint-ter;
+    padding: $inner-space;
   }
   aside {
-    $aside-outer: 1em;
-    $aside-inner: 2px;
     width: 30vw;
     float: right;
     text-align: right;
-    margin: 0 0 $aside-outer $aside-outer;
-    padding: $aside-inner;
-    box-shadow: -#{$aside-inner} $aside-inner 0px $aside-inner $tint-pri;
+    background-color: $tint-ter;
+    margin: 0 0 $outer-space $outer-space;
+    padding: $inner-space;
+    border: $stylish-border;
+    border-top: none;
+    border-right: none;
     & > * {
       max-width: 99%;
       word-wrap: break-word;
