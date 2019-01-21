@@ -4,8 +4,21 @@ import style from './job-details.scss';
 
 const JobDetails = ({ job }) => (
   <div className={style['job-details']}>
-    <h2>{job.title}</h2>
-    <p>Under construction</p>
+    <span className={style.badge}>
+      {job.type}
+      {job.location && ' @ ' + job.location}
+    </span>
+    <h1>{job.title}</h1>
+    <aside>
+      <a href={job.company_url}>
+        <img alt={job.company} src={job.company_logo} />
+      </a>
+      <div dangerouslySetInnerHTML={{ __html: job.how_to_apply }} />
+    </aside>
+    <div
+      className={style.description}
+      dangerouslySetInnerHTML={{ __html: job.description }}
+    />
   </div>
 );
 
