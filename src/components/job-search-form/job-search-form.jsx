@@ -29,12 +29,12 @@ class JobSearchForm extends React.Component {
     const searchAtts = {
       name: 'search',
       title: 'Job Description',
-      placeholder: 'Filter by title, keywords',
+      placeholder: 'Title, keywords',
     };
     const locationAtts = {
       name: 'location',
       title: 'Location',
-      placeholder: 'Filter by city, state, zip code',
+      placeholder: 'City, state, zip code',
     };
     const fullTimeAtts = {
       type: 'checkbox',

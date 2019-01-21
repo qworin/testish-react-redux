@@ -1,5 +1,18 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 .submit-button {
-  .show-spinner {
-    color: red;/*TOCHANGE*/
+  @include input-border();
+  padding: 0 1rem;
+  height: $input-size;
+  font-family: inherit;
+  cursor: pointer;
+  color: $dark;
+  background-color: $tint-sec;
+  &:active,
+  &:disabled {
+    background-color: $tint-ter;
+  }
+  &:disabled {
+    color: $tint-sec;
   }
 }

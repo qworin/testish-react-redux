@@ -5,7 +5,7 @@ import style from './submit-button.scss';
 const SubmitButton = ({ showSpinner }) => (
   <button
     type="submit"
-    className={showSpinner ? style['show-spinner'] : ''}
+    className={style['submit-button']}
     disabled={showSpinner}
   >
     Submit

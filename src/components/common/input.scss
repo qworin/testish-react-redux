@@ -1,8 +1,61 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 .form-group {
+  $padding: 5px;
+  $backgr: #fff;
+  display: inline-block;
+  .label {
+    @include centered();
+    font-size: $smaller;
+    color: $dark;
+    padding-left: $padding;
+    padding-bottom: calc(0.5 * #{$padding});
+    cursor: pointer;
+  }
+
   .input {
+    @include input-border();
+    font-family: inherit;
+    display: block;
+    padding: 0 $padding;
+    height: $input-size;
+    background-color: $backgr;
     &[type="text"] {
+      max-width: calc(100% - 2 * #{$padding});
     }
     &[type="checkbox"] {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      display: none;
+    }
+  }
+
+  /* custom checkbox */
+  .mark {
+    @include input-border();
+    @include centered();
+    height: $input-size;
+    width: $input-size;
+    display: block;
+    background-color: $backgr;
+    &:after {
+      @include centered();
+      content: '✖';
+      display: none;
+      color: $dark;
+      font-size: $bigger;
+      width: calc(0.5 * #{$input-size});
+      padding-top: 3px;
+    }
+  }
+  .label:hover ~ [type="checkbox"] ~ .mark,
+  .mark:hover {
+    background-color: $tint-ter;
+  }
+  .input[type="checkbox"]:checked ~ .mark {
+    background-color: $tint-sec;
+    &:after {
+      display: block;
     }
   }
 }

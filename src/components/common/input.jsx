@@ -4,15 +4,18 @@ import style from './input.scss';
 
 const Input = ({ name, type, title, placeholder }) => (
   <div className={style['form-group']}>
-    {title ? <label htmlFor={name}>{title}</label> : ''}
-    <input
-      className={style.input}
-      id={name}
-      name={name}
-      type={type}
-      placeholder={placeholder}
-      title={title || name}
-    />
+    <label htmlFor={name}>
+      <span className={style.label}>{title || name}</span>
+      <input
+        className={style.input}
+        id={name}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        title={title || name}
+      />
+      <span className={type === 'checkbox' ? style.mark : ''}></span>
+    </label>
   </div>
 );
 

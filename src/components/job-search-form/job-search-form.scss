@@ -1,6 +1,16 @@
+@import '../../styles/variables.scss';
 .job-search-form {
-  margin: 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: end;
+  justify-content: space-between;
+  margin: 1rem;
+  padding: 1em;
+  border-bottom: $stylish-border;
+  background-color: rgba($tint-ter, 0.15);
+  & > div {
+    margin: 0 5px;
+  }
+  & > button {
+    margin-left: auto;;
+  }
 }
